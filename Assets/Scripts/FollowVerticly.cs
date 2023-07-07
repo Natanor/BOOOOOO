@@ -23,7 +23,7 @@ public class FollowVerticly : MonoBehaviour
         speed += Random.Range(-0.12f, 0.1f);
         speed = Mathf.Max(Mathf.Min(speed, maxSpeed), minSpeed);
         float distance = target.transform.position.y - transform.position.y;
-        Vector2 force = Vector2.up * speed * distance/Mathf.Abs(distance);
+        Vector2 force = Vector2.up * speed * distance/Mathf.Abs(distance) * moveRigidbody.mass;
         float slip = Random.Range(0,100);
         if (slip < slipChance)
         {
